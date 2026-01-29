@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "npMXWFeF2Yl7f7CFbwllws5mJcrFgviwZ3+O5/LUghA=",
+  "Source": "StudentGradeApi",
+  "BasePath": "_content/StudentGradeApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
