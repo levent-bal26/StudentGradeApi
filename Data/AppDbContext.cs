@@ -11,4 +11,6 @@ public class AppDbContext : DbContext
     public DbSet<Bolum> Bolumler => Set<Bolum>();
     public DbSet<Ogrenci> Ogrenciler => Set<Ogrenci>();
     public DbSet<Ders> Dersler => Set<Ders>();
+    public DbSet<OgrenciDers> OgrenciDersler => Set<OgrenciDers>();
+
 }
