@@ -3,17 +3,21 @@ using StudentGradeApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 Servisler
+// ✅ Controllers (API endpoint'leri)
+builder.Services.AddControllers();
+
+// ✅ Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 🔹 DbContext BURAYA EKLENİR
+// ✅ DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 var app = builder.Build();
 
-// 🔹 Middleware
+// ✅ Swagger UI
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -21,5 +25,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// (Auth kullanmıyorsan bile dursun, sorun çıkarmaz)
+app.UseAuthorization();
+
+// ✅ Controller route'larını devreye alır (EN KRİTİK SATIR)
+app.MapControllers();
 
 app.Run();
